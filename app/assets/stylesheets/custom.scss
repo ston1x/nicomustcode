@@ -1,0 +1,65 @@
+
+body{
+
+}
+
+a, tr, th, td, col{
+	font-size: 16px;
+	vertical-align: middle;
+	
+}
+
+h2 {
+	font-size: 28px;
+}
+
+.appname{
+	font-weight: bold;
+}
+
+.page-header{
+	margin-top: 1rem;
+}
+
+.col-sm {
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+}
+.description {
+	font-size: 18px;
+}
+
+.table-person-id {
+	font-weight: bold;
+}
+
+.card-btn-submit {
+	float: right;
+	text-align: right;
+}
+
+.foot-btns {
+	padding-bottom: 1.5rem;
+	text-align: center;
+}
+
+.btn-footer {
+	margin-left: 0.75rem;
+	margin-right: 0.75rem;
+}
+
+.table-scrollable {
+  overflow: scroll;
+  overflow-x: auto;
+  overflow-y:hidden;
+}
+
+.btn-success {
+	margin-bottom: 1rem;
+}
+
+footer {
+	text-align: center;
+	color: #707070;
+	margin-bottom: 1rem;
+}

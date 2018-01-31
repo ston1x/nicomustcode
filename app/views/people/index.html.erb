@@ -1,0 +1,60 @@
+<% content_for :title, "Nicomustcode"%>
+
+
+<h3 class="page-header">Users</h3>
+
+<div class="row">
+  <div class="col table-scrollable">
+<table class="table table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Email</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td scope="row" class="table-person-id"><%= person.id %> </td>
+        <td><%= person.first_name %></td>
+        <td><%= person.last_name %></td>
+        <td><%= person.email %></td>
+        <td><%= link_to 'Show', person, class: 'btn btn-outline-secondary btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_person_path(person), class: 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+<%= link_to 'New Person', new_person_path, class: 'btn btn-success' %>
+
+<div class="row">
+        <div class="col-sm">
+
+          <h2>About the app</h2>
+          <div  class="description">
+          This is a CRUD (Create, Read, Update, Destroy) app for Internship at FusionWorks. The app is written in Ruby on Rails and the frontend is crafted using Bootstrap. It has Active Record Validations (e.g. if the name is too long/short or the email field doesn't contain the '@' symbol, the error messages will be displayed). The tab names are also automatically changed according to a person's first name.
+          </div>
+        </div>
+
+      
+      </div>
+
+
+      <div class="row foot-btns">
+        <div class="col-sm">
+          <div class="btn-footer">
+            
+          <a href="mailto:nstoyanov@outlook.com" class="btn btn-outline-primary btn-footer">Email me</a>
+
+          <a href="https://github.com/ston1x/nicomustcode" target="_blank" class="btn btn-outline-primary btn-footer">GitHub</a>
+          </div>
+        </div>
+      </div>
+     

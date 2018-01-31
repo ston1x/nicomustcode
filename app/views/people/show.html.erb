@@ -1,0 +1,35 @@
+<% content_for :title, @person.first_name+" - Info" %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			<div class="card" style="width: 18rem;">
+			  <div class="card-body">
+			    <h4 class="card-title">Person info</h4>
+			    <p class="card-text">
+			
+				<p>
+					<strong>ID:</strong>
+					<%= @person.id %>
+				</p>
+
+				<p>
+				  <strong>First name:</strong>
+				  <%= @person.first_name %>
+				</p>
+
+				<p>
+				  <strong>Last name:</strong>
+				  <%= @person.last_name %>
+				</p>
+
+				<p>
+				  <strong>Email:</strong>
+				  <%= @person.email %>
+				</p>
+				<%= link_to 'Back', people_path, class: 'card-link' %>
+				<%= link_to 'Edit', edit_person_path(@person), class: 'card-link' %>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+      <%= form_with(model: person, local: true) do |form| %>
+        <% if person.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+            <ul>
+            <% person.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 20rem;">
+            <div class="card-body">
+              <h4 class="card-title">
+            <%= controller.action_name.capitalize %>
+            Person
+            </h4>
+                <p class="card-text">
+
+              <div class="form-group">
+            <label for="formGroupExampleInput">First name</label>
+            <%= form.text_field :first_name, :class=> "form-control" %>
+          </div>        
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Last name</label>
+            <%= form.text_field :last_name, :class=> "form-control" %>
+          </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput">Email</label>
+            <%= form.text_field :email, :class=> "form-control" %>
+            </div>
+          </p>
+          <p>
+            <%= link_to 'Back', people_path, class: 'card-link' %>
+              <%= form.submit :Submit, class: 'btn btn-outline-primary card-btn-submit' %>
+          <% end %>
+          </p>
+              
+              
+        </div>
+      </div>
+</div>

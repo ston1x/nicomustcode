@@ -36,7 +36,7 @@
     
       <% if user_signed_in? %>
       <li class="nav-item">
-      Logged in as <strong><%= current_user.email %></strong>.
+      <ins class="nav-link"> Logged in as <strong><%= current_user.email %></strong>.</ins>
       </li>
       <li class="nav-item">
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
@@ -58,7 +58,7 @@
 </nav>
 
   	<div class="container">
-  		<div class="row">
+  		<div class="row mb-auto">
   			<div class="col">
           <% if notice %>
             <p class="alert alert-success"><%= notice %></p>
@@ -70,7 +70,12 @@
           <%= yield %>
   			</div>
   		</div>
+      <footer>
+        <div class="d-flex align-items-end justify-content-center">
+          Nicolai Stoianov, <%= Time.now.year %>
+        </div>
+        </footer>
   	</div>
-     <footer>Nicolai Stoianov, <%= Time.now.year %></footer>
+     
   </body>
 </html>

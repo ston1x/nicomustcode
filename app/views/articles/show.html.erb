@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <h2 class="text-center"><%= @article.title %> </h2>
@@ -7,6 +6,18 @@
 <p>
   <%= @article.text %>
 </p>
+ 
+ <small class="text-muted">
+	  Posted by user #<%= @article.user_id %>:
+	  <%= User.find(@article.user_id).email %>
+	  <br>
+	  Last updated <%= @article.updated_at %>
+</small>           
+<br>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', articles_path, class: 'card-link' %>
+
+<% if current_user.id == @article.user_id %>
+<%= link_to 'Edit', edit_article_path(@article), class: 'card-link' %>
+<%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
+<% end %>

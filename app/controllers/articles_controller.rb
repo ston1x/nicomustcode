@@ -24,17 +24,15 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
-
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
-      else
-        format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+    @user = current_user
+    @article = current_user.articles.build(article_params)
+    if @user.save
+      flash[:notice] = "Article created successfully"
+      redirect_to user_articles_path(@user)
+    else
+      render :new
     end
+    
   end
 
   # PATCH/PUT /articles/1
@@ -54,6 +52,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }

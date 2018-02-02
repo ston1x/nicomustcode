@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 
 <h1>Articles</h1>
 <div class="container-fluid">
@@ -28,10 +26,15 @@
             <br>
           </p>
           <p class="card-text">
+            <% if current_user.id == article.user_id %>
              <%= link_to 'Edit', edit_article_path(article), class: 'card-link' %>
-            <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
+             <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
+            <% end %>
             <br>
             <small class="text-muted">
+              Posted by user #<%= article.user_id %>:
+              <%= User.find(article.user_id).email %>
+              <br>
               Last updated <%= article.updated_at %>
             </small>
           </p>

@@ -50,6 +50,16 @@ footer {
 	font-weight: bold;
 }
 
+.card-link {
+	margin-top: 0.5rem;
+	padding-top: 0rem;
+	margin-bottom: 0rem;
+}
+
+.link-top {
+	font-size: 1.5rem;
+}
+
 .card-btn-submit {
 	float: right;
 	text-align: right;
@@ -73,4 +83,10 @@ footer {
 
 .btn-success {
 	margin-bottom: 1rem;
+}
+
+.article-title {
+	text-decoration: none;
+	color: black;
+	font-size: 2rem;
 }

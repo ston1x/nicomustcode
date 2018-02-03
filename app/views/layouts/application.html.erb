@@ -20,15 +20,28 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <div class="col-sm-4 mr-auto">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/people">People</a>
-      </li>
-      <li class="nav-item">
+
+        <% if request.fullpath.include?('people') or request.fullpath == '/' %>
+          <li class="nav-item active">
+          <a class="nav-link" href="/people">People</a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+          <a class="nav-link" href="/people">People</a>
+          </li>
+        <% end %>
+
+
+        <% if request.fullpath.include?('articles') %>
+         <li class="nav-item active">
         <a class="nav-link" href="/articles">Articles</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Changelog</a>
-      </li>
+        <% else %>
+          <li class="nav-item">
+           <a class="nav-link" href="/articles">Articles</a>
+          </li>
+        <% end %>
+      
     </ul>
   </div>
   
